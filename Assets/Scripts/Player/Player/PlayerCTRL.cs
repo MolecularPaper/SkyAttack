@@ -74,7 +74,7 @@ public class PlayerCTRL : PlayerTirggers
             IsJump = false;
         }
 
-        IsUp = rigidbody.velocity.y > 0.1f;
+        IsUp = rigidbody.velocity.y > 0f && !IsGround;
     }
 
     private void Turn()
@@ -115,6 +115,6 @@ public class PlayerCTRL : PlayerTirggers
     {
         animator.SetBool("IsMove", IsMove && !IsWall);
         animator.SetBool("IsJump", IsUp);
-        animator.SetBool("IsGround", IsGround);
+        animator.SetBool("IsAir", !IsGround && rigidbody.velocity.y <= -0.3f);
     }
 }
