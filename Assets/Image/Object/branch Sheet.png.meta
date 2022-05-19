@@ -47,7 +47,7 @@ TextureImporter:
   spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -682,7 +682,6 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       branch Sheet_10: -1714122806
-      branch Sheet_25: -785788310
       branch Sheet_0: 863988432
       branch Sheet_16: -43233803
       branch Sheet_12: 302564096
@@ -694,15 +693,16 @@ TextureImporter:
       branch Sheet_18: -881316697
       branch Sheet_1: -399632209
       branch Sheet_19: 762752410
-      branch Sheet_21: 355514217
+      branch Sheet_25: -785788310
       branch Sheet_8: 13122850
-      branch Sheet_14: -253838041
+      branch Sheet_21: 355514217
       branch Sheet_15: 707558458
+      branch Sheet_14: -253838041
       branch Sheet_3: 1988216350
-      branch Sheet_17: 1799584205
       branch Sheet_22: -313268664
-      branch Sheet_20: 183679205
+      branch Sheet_17: 1799584205
       branch Sheet_24: -1416494976
+      branch Sheet_20: 183679205
       branch Sheet_4: 142357322
       branch Sheet_5: 556301228
       branch Sheet_2: -1118558317
