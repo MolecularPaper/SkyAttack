@@ -5649,13 +5649,8 @@ Tilemap:
   - first: {x: -41, y: 347, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
       m_TileIndex: 48
       m_TileSpriteIndex: 45
-=======
-      m_TileIndex: 28
-      m_TileSpriteIndex: 4294967295
->>>>>>> Stashed changes
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5664,13 +5659,8 @@ Tilemap:
   - first: {x: -40, y: 347, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
       m_TileIndex: 49
       m_TileSpriteIndex: 46
-=======
-      m_TileIndex: 30
-      m_TileSpriteIndex: 4294967295
->>>>>>> Stashed changes
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5679,13 +5669,8 @@ Tilemap:
   - first: {x: -39, y: 347, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
       m_TileIndex: 50
       m_TileSpriteIndex: 47
-=======
-      m_TileIndex: 31
-      m_TileSpriteIndex: 4294967295
->>>>>>> Stashed changes
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5694,13 +5679,8 @@ Tilemap:
   - first: {x: -38, y: 347, z: 0}
     second:
       serializedVersion: 2
-<<<<<<< Updated upstream
       m_TileIndex: 51
       m_TileSpriteIndex: 48
-=======
-      m_TileIndex: 29
-      m_TileSpriteIndex: 4294967295
->>>>>>> Stashed changes
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -5885,11 +5865,10 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 59b950cadf27fa14ea505a20c55b289e, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 0}
+    m_Data: {fileID: 11400000, guid: d2669a4b04abcaf42a3acce7bb1e19b7, type: 2}
   - m_RefCount: 1
-    m_Data: {fileID: 0}
+    m_Data: {fileID: 11400000, guid: 4c8b1374090fb0543b0a56d7ed71cc13, type: 2}
   - m_RefCount: 1
-<<<<<<< Updated upstream
     m_Data: {fileID: 11400000, guid: 6f41b51a9d91f344a91490626a5446db, type: 2}
   - m_RefCount: 2
     m_Data: {fileID: 11400000, guid: d0d3d798c9f03854db481730a4f9c603, type: 2}
@@ -5901,32 +5880,6 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 470887a8b47151f469c8c1c4996299b9, type: 2}
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 1f1b59d1ab0f9b34a88d734d6ef98d05, type: 2}
-=======
-    m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: 0}
-  m_TileSpriteArray:
-  - m_RefCount: 8
-    m_Data: {fileID: 131944377, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 58
-    m_Data: {fileID: 684012175, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 17
-    m_Data: {fileID: 696170760, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 16
-    m_Data: {fileID: -264457492, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 8
-    m_Data: {fileID: 1903414482, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 4
-    m_Data: {fileID: -471374243, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 2
-    m_Data: {fileID: 1226034519, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
->>>>>>> Stashed changes
   - m_RefCount: 4
     m_Data: {fileID: 11400000, guid: 25f0b71e7a3bfd84ab5a09a99851010a, type: 2}
   - m_RefCount: 4
@@ -5993,7 +5946,6 @@ Tilemap:
   - m_RefCount: 4
     m_Data: {fileID: 978267340, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
   - m_RefCount: 16
-<<<<<<< Updated upstream
     m_Data: {fileID: -264457492, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
   - m_RefCount: 58
     m_Data: {fileID: 684012175, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
@@ -6021,15 +5973,6 @@ Tilemap:
     m_Data: {fileID: 1903414482, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
   - m_RefCount: 8
     m_Data: {fileID: 131944377, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-=======
-    m_Data: {fileID: -400276484, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
->>>>>>> Stashed changes
   - m_RefCount: 1
     m_Data: {fileID: 1017378670, guid: 1db4bc9f6a83f394bb5d1bc0839bb0e1, type: 3}
   - m_RefCount: 1
