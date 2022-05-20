@@ -28,7 +28,7 @@ public class PlayerExtension : PlayerBase
         get
         {
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
-            return Physics2D.CircleCast(GroundCheckPostion, collider.size.x / 2f - 0.05f, -Vector2.up, collider.size.x / 2f + 0.1f, layerMask);
+            return Physics2D.CircleCast(GroundCheckPostion, collider.size.x / 2f - 0.05f, -Vector2.up, collider.size.x / 2f + 0.2f, layerMask);
         }
     }
 
