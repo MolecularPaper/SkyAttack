@@ -64,6 +64,8 @@ public class ObjectPoolerExtension : ObjectPoolerInfo
 {
     public List<IPoolObject> deactiveObjects = new List<IPoolObject>();
     public List<IPoolObject> activeObjects = new List<IPoolObject>();
+
+    [HideInInspector]
     public Transform poolFolder;
 }
 

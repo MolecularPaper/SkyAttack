@@ -1,6 +1,12 @@
 using UnityEngine;
 
-
+[System.Serializable]
+public enum PlayerSoundEffectType
+{
+    Jump,
+    Land,
+    FootStep,
+}
 
 public class PlayerBase : DynamicObjectExtension
 {
@@ -9,6 +15,11 @@ public class PlayerBase : DynamicObjectExtension
     [SerializeField] protected float jumpSpeed;
     [SerializeField] protected float jumpAccel;
     [SerializeField] protected float maxClimbAngle;
+
+    [Space(10)]
+    [SerializeField] protected AudioClip[] jumpSound;
+    [SerializeField] protected AudioClip[] landSound;
+    [SerializeField] protected AudioClip[] footStepSound;
 
     protected KeyInfo key = new KeyInfo();
 }

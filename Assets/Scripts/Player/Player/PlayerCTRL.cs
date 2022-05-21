@@ -117,4 +117,23 @@ public class PlayerCTRL : PlayerTirggers
         animator.SetBool("IsJump", IsUp);
         animator.SetBool("IsAir", !IsGround && rigidbody.velocity.y <= -0.3f);
     }
+
+    public void PlaySoundEffect(PlayerSoundEffectType type)
+    {
+        switch (type)
+        {
+            case PlayerSoundEffectType.Jump:
+                audioSource.PlayOneShot(jumpSound[Random.Range(0, jumpSound.Length)]);
+                break;
+            case PlayerSoundEffectType.Land:
+                audioSource.PlayOneShot(landSound[Random.Range(0, landSound.Length)]);
+                break;
+            case PlayerSoundEffectType.FootStep:
+                if(IsGround)
+                    audioSource.PlayOneShot(footStepSound[Random.Range(0, footStepSound.Length)]);
+                break;
+            default:
+                throw new System.ArgumentOutOfRangeException(nameof(type), $"Not expected direction value: {type}");
+        }
+    }
 }
