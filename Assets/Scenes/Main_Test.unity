@@ -1455,7 +1455,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 323932858}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: -10}
+  m_LocalPosition: {x: -10, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1470,6 +1470,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 554129802, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8825863521499865340, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
       propertyPath: m_Name
       value: Fixed
@@ -1516,22 +1520,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8825863521499865343, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8825863522256466264, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
-      propertyPath: jumpAccel
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 8825863522256466264, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
-      propertyPath: maxClimbAngle
-      value: 60
-      objectReference: {fileID: 0}
-    - target: {fileID: 8825863522256466270, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8825863522256466270, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
-      propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1681,7 +1669,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454559433}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4, y: 0, z: -10}
+  m_LocalPosition: {x: -10, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
