@@ -1,6 +1,3 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using System.Collections;
 using UnityEngine;
 
 public class Colud : MonoBehaviour
@@ -29,7 +26,7 @@ public class Colud : MonoBehaviour
 
             if (originColor.a == 0)
             {
-                collider.enabled = false;
+                collider.isTrigger = true;
             }
         }
         else
@@ -39,7 +36,7 @@ public class Colud : MonoBehaviour
 
             if (originColor.a == 1)
             {
-                collider.enabled = true;
+                collider.isTrigger = false;
             }
         }
     }
@@ -48,9 +45,10 @@ public class Colud : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        Task.Run(async () => {
-            await Task.Delay(500);
-            onPlayer = false;
-        });
+        onPlayer = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) => onPlayer = true;
+
+    private void OnTriggerExit2D(Collider2D collision) => onPlayer = false;
 }
