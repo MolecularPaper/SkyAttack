@@ -11,7 +11,7 @@ public class CameraInfo : MonoBehaviour
 
 public class CameraCTRL : CameraInfo
 {
-    public void Update()
+    public void LateUpdate()
     {
         CameraPostionClamped();
     }
