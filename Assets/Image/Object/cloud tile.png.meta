@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 765b0b59a4e26b044b222e3ba017f397
+guid: af48bd86c27731842992ed6b17a1f2a9
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -100,18 +100,6 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -130,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 265d2c569d91365499fbbf2697f23b7a
-      internalID: -1160438977
+      spriteID: 9d200635c676df94fa61bf1a6ae521c3
+      internalID: 485058836
       vertices: []
       indices: 
       edges: []
@@ -151,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4157cd9b758659d49858d2ec798a4fca
-      internalID: 175075761
+      spriteID: 5ca76f7cddccfdd469ed11126c4b1d99
+      internalID: 653625396
       vertices: []
       indices: 
       edges: []
@@ -172,8 +160,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fb4f187c9d925fc468b6dcf026060933
-      internalID: -1756537994
+      spriteID: b3f37264e28adfb4794da77361fbcc86
+      internalID: -724796012
       vertices: []
       indices: 
       edges: []
@@ -189,9 +177,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      cloud tile_1: 175075761
-      cloud tile_0: -1160438977
-      cloud tile_2: -1756537994
+      cloud tile_1: 653625396
+      cloud tile_0: 485058836
+      cloud tile_2: -724796012
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
