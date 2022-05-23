@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6051638050892149785}
   - component: {fileID: 6051638050892149790}
   m_Layer: 6
-  m_Name: Colud
+  m_Name: Colud_Small
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
