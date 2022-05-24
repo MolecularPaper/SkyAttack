@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6051638050892149785}
   - component: {fileID: 6051638050892149790}
   m_Layer: 6
-  m_Name: Colud_Lage
+  m_Name: Colud_Large
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,4 +134,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82a23386282d8ba489fdac252bf5772f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  extinctionSpeed: 1
+  extinctionSpeed: 2

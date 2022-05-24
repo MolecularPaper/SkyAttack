@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Colud : MonoBehaviour
+public class Cloud : MonoBehaviour
 {
     [SerializeField] private float extinctionSpeed;
 
@@ -10,14 +10,14 @@ public class Colud : MonoBehaviour
 
     private Color originColor;
 
-    void Awake()
+    protected virtual void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         originColor = spriteRenderer.color;
     }
 
-    void Update()
+    protected virtual void Update()
     {
         if (onPlayer)
         {
@@ -41,14 +41,14 @@ public class Colud : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision) => onPlayer = true;
+    protected virtual void OnCollisionEnter2D(Collision2D collision) => onPlayer = true;
 
-    private void OnCollisionExit2D(Collision2D collision)
+    protected virtual void OnCollisionExit2D(Collision2D collision)
     {
         onPlayer = false;
     }
 
-    private void OnTriggerEnter2D(Collider2D collision) => onPlayer = true;
+    protected virtual void OnTriggerEnter2D(Collider2D collision) => onPlayer = true;
 
-    private void OnTriggerExit2D(Collider2D collision) => onPlayer = false;
+    protected virtual void OnTriggerExit2D(Collider2D collision) => onPlayer = false;
 }
