@@ -4,13 +4,25 @@ using UnityEngine;
 
 public class MoveObject : MonoBehaviour
 {
-    [SerializeField] private Vector3[] movePoints;
+    [SerializeField] private Vector3[] moveLocalPoints;
     [SerializeField] private bool moveOnAwake;
+    [SerializeField] private bool isFlip;
     [SerializeField] private float moveSpeed;
     [SerializeField] private Color pointColor;
 
+    private SpriteRenderer spriteRenderer;
+
+    private Vector3[] movePoints;
     private bool isMove;
     private int moveIndex;
+
+    public Vector3 CurrenPoint
+    {
+        get
+        {
+            return movePoints[moveIndex];
+        }
+    }
 
     public bool IsMove
     {
@@ -20,17 +32,27 @@ public class MoveObject : MonoBehaviour
 
     public void Awake()
     {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
         isMove = moveOnAwake;
         moveIndex = 1;
+
+        SetMovePoints();
     }
 
     public void OnDrawGizmos()
     {
         Gizmos.color = pointColor;
 
-        foreach (var point in movePoints)
+        if (Application.isPlaying)
         {
-            Gizmos.DrawSphere(point, 0.3f);
+            foreach (var point in movePoints)
+                Gizmos.DrawSphere(point, 0.3f);
+        }
+        else
+        {
+            foreach (var point in moveLocalPoints)
+                Gizmos.DrawSphere(transform.position + point, 0.3f);
         }
     }
 
@@ -39,18 +61,41 @@ public class MoveObject : MonoBehaviour
         if (!isMove)
             return;
 
-        if (Vector3.Distance(movePoints[moveIndex], transform.position) != 0.0f)
+        if (Vector3.Distance(CurrenPoint, transform.position) != 0.0f)
         {
             MoveNext();
             return;
         }
 
         NextMoveIndex();
+        Flip();
+    }
+
+    private void SetMovePoints()
+    {
+        movePoints = new Vector3[moveLocalPoints.Length];
+        for (int i = 0; i < moveLocalPoints.Length; i++)
+        {
+            movePoints[i] = transform.position + moveLocalPoints[i];
+        }
     }
 
     private void MoveNext()
     {
-        transform.position = Vector3.MoveTowards(transform.position, movePoints[moveIndex], Time.deltaTime * moveSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, CurrenPoint, Time.deltaTime * moveSpeed);
+    }
+
+    private void Flip()
+    {
+        if (!isFlip)
+            return;
+
+        Vector3 dir = transform.position - CurrenPoint;
+
+        if (dir.x > 0)
+            spriteRenderer.flipX = true;
+        else
+            spriteRenderer.flipX = false;
     }
 
     private void NextMoveIndex()
