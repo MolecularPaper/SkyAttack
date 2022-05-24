@@ -41,6 +41,14 @@ public class PlayerCTRL : PlayerTirggers
         }
     }
 
+    public void OnDrawGizmos()
+    {
+        if (Application.isPlaying)
+        {
+            Gizmos.DrawWireCube(WallCastPostion, WallCastSize);
+        }
+    }
+
     private void CheckJump()
     {
         if (rigidbody.velocity.y <= -0.1f || TopCast.collider != null)

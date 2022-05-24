@@ -30,7 +30,7 @@ public class PlayerExtension : PlayerBase
     {
         get
         {
-            return new Vector2(transform.position.x, transform.position.y + collider.size.x);
+            return new Vector2(transform.position.x, transform.position.y + collider.size.x - 0.2f);
         }
     }
 
@@ -39,15 +39,15 @@ public class PlayerExtension : PlayerBase
         get
         {
             int layerMask = (-1) - (1 << LayerMask.NameToLayer("Player"));
-            return Physics2D.CircleCast(GroundCheckPostion, collider.size.x / 2f - 0.05f, -Vector2.up, collider.size.x / 2f + 0.2f, layerMask);
+            return Physics2D.CircleCast(GroundCheckPostion, collider.size.x / 2f, Vector2.down, collider.size.y, layerMask);
         }
     }
 
-    protected Vector2 WallCehckPostion
+    protected Vector2 WallCastPostion
     {
         get
         {
-            return transform.position + new Vector3((collider.size.x / 2f + 0.1f) * forward, collider.size.y / 2f);
+            return transform.position + new Vector3(0.02f * forward, collider.size.y / 2f);
         }
     }
 
@@ -56,7 +56,7 @@ public class PlayerExtension : PlayerBase
     {
         get
         {
-            return new Vector2(0.1f, collider.size.y - 0.02f);
+            return new Vector2(collider.size.x, collider.size.y - 0.2f);
         }
     }
 
@@ -64,7 +64,7 @@ public class PlayerExtension : PlayerBase
     {
         get
         {
-            return Vector3.right * forward * 0.1f;
+            return Vector3.right * forward;
         }
     }
 
@@ -72,9 +72,9 @@ public class PlayerExtension : PlayerBase
     protected RaycastHit2D WallCast
     {
         get
-        {
-            int layerMask = (1 << LayerMask.NameToLayer("Player")) + (1 << LayerMask.NameToLayer("Terrain"));
-            return Physics2D.BoxCast(WallCehckPostion, WallCastSize, 0, WallCastDirection, 0.01f, layerMask: layerMask);
+        { 
+            int layerMask = 1 << LayerMask.NameToLayer("Terrain");
+            return Physics2D.CapsuleCast(WallCastPostion, WallCastSize, CapsuleDirection2D.Vertical, 0.0f, WallCastDirection, collider.size.x / 2f, layerMask);
         }
     }
 
