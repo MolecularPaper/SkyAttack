@@ -108,9 +108,9 @@ public class PlayerCTRL : PlayerTirggers
     {
         animator.SetTrigger("IsDamaged");
 
-        float pushDir = Random.Range(-1f, 1f);
+        float[] pushDir = new float[]{ -1f, 1f, -0.5f, 0.5f};
         float jumpDir = Random.Range(0, 1f);
-        rigidbody.AddForce(new Vector2(pushDir * pushSpeed, jumpDir * pushSpeed), ForceMode2D.Impulse);
+        rigidbody.AddForce(new Vector2(pushDir[Random.Range(0, pushDir.Length)] * pushSpeed, jumpDir * pushSpeed), ForceMode2D.Impulse);
     }
 
     private void SetFriction()
