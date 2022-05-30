@@ -1,17 +1,19 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CheckOnPlayer))]
 public class Cloud : MonoBehaviour
 {
     [SerializeField] private float extinctionSpeed;
 
+    private CheckOnPlayer checkOnPlayer;
     private SpriteRenderer spriteRenderer;
     private new Collider2D collider;
-    private bool onPlayer = false;
 
     private Color originColor;
 
     protected virtual void Awake()
     {
+        checkOnPlayer = GetComponent<CheckOnPlayer>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         collider = GetComponent<Collider2D>();
         originColor = spriteRenderer.color;
@@ -19,7 +21,7 @@ public class Cloud : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (onPlayer)
+        if (checkOnPlayer.onPlayer)
         {
             originColor.a = Mathf.MoveTowards(originColor.a, 0, extinctionSpeed * Time.deltaTime);
             spriteRenderer.color = originColor;
@@ -40,15 +42,4 @@ public class Cloud : MonoBehaviour
             }
         }
     }
-
-    protected virtual void OnCollisionEnter2D(Collision2D collision) => onPlayer = true;
-
-    protected virtual void OnCollisionExit2D(Collision2D collision)
-    {
-        onPlayer = false;
-    }
-
-    protected virtual void OnTriggerEnter2D(Collider2D collision) => onPlayer = true;
-
-    protected virtual void OnTriggerExit2D(Collider2D collision) => onPlayer = false;
 }

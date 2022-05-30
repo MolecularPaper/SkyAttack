@@ -12,6 +12,7 @@ public class PlayerBase : DynamicObjectExtension
 {
     [Space(10)]
     [SerializeField] protected float moveSpeed;
+    [SerializeField] protected float pushSpeed;
     [SerializeField] protected float jumpSpeed;
     [SerializeField] protected float jumpAccel;
     [SerializeField] protected float maxClimbAngle;

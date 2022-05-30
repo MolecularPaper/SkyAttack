@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6051638050892149762}
   - component: {fileID: 6051638050892149785}
   - component: {fileID: 6051638050892149790}
+  - component: {fileID: 6385659581775534403}
   m_Layer: 6
   m_Name: Colud_Middle
   m_TagString: Untagged
@@ -95,7 +96,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 6051638050892149763}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 1dd696d80762ba349968cc3c25a2f37e, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -131,3 +132,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   extinctionSpeed: 2
+--- !u!114 &6385659581775534403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6051638050892149763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5da943087991d4745b249485088030cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onPlayer: 0

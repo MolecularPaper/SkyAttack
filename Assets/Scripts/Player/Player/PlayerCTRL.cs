@@ -20,10 +20,12 @@ public class PlayerCTRL : PlayerTirggers
 
     public virtual void FixedUpdate()
     {
+        SetFriction();
+        CheckEndDamaged();
+
         Move();
         Turn();
         Jump();
-        SetFriction();
     }
 
     public void OnEnable() => key.OnEnabled();
@@ -32,10 +34,9 @@ public class PlayerCTRL : PlayerTirggers
 
     private void Move()
     {
-        var dir = new Vector2(key.Horizontal, 0);
         var input = key.Horizontal;
 
-        if ((CanClimbAngle || dir.x != GroundAnlgeDir) && !IsWall)
+        if (input != 0 && (CanClimbAngle || input != GroundAnlgeDir) && !IsWall)
         {
             rigidbody.velocity = new Vector2(input * moveSpeed, rigidbody.velocity.y);
         }
@@ -103,6 +104,21 @@ public class PlayerCTRL : PlayerTirggers
                 IsTurn = false;
             }
         }
+    }
+
+    public void Damaged()
+    {
+        animator.SetTrigger("IsDamaged");
+
+        float pushDir = Random.Range(-1f, 1f);
+        float jumpDir = Random.Range(0, 1f);
+        rigidbody.AddForce(new Vector2(pushDir * pushSpeed, jumpDir * pushSpeed), ForceMode2D.Impulse);
+    }
+
+    public void CheckEndDamaged()
+    {
+        if (!IsDamaged || !IsGround)
+            return;
     }
 
     private void SetFriction()
