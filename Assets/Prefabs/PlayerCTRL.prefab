@@ -255,10 +255,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  pushSpeed: 7
+  pushSpeed: 15
   jumpSpeed: 18
   jumpAccel: 2
   maxClimbAngle: 60
+  damagedDelay: 3
   jumpSound:
   - {fileID: 8300000, guid: 8420cf17e21d6354a98e6ef6d19dc9cc, type: 3}
   - {fileID: 8300000, guid: e708389b7a8f64a46aa12d201c187b69, type: 3}

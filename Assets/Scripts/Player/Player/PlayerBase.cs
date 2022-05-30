@@ -16,6 +16,7 @@ public class PlayerBase : DynamicObjectExtension
     [SerializeField] protected float jumpSpeed;
     [SerializeField] protected float jumpAccel;
     [SerializeField] protected float maxClimbAngle;
+    [SerializeField] protected float damagedDelay;
 
     [Space(10)]
     [SerializeField] protected AudioClip[] jumpSound;

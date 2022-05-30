@@ -533,8 +533,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8825863522256466264, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
-      propertyPath: pushSpeed
-      value: 15
+      propertyPath: damagedDelay
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8825863522256466270, guid: 9e72dc489269a9f43b01ccbb2ee7c544, type: 3}
       propertyPath: m_LocalPosition.x

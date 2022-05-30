@@ -1,4 +1,4 @@
-using System.Threading.Tasks;
+using System.Collections;
 using UnityEngine;
 
 
@@ -74,14 +74,6 @@ public class PlayerCTRL : PlayerTirggers
         }
     }
 
-    private void CheckEndDamaged()
-    {
-        if (IsDamaged && IsGround)
-        {
-            IsDamaged = false;
-        }
-    }
-
     private void Jump()
     {
         if (IsJump && rigidbody.velocity.y <= jumpSpeed)
@@ -116,7 +108,7 @@ public class PlayerCTRL : PlayerTirggers
         }
     }
 
-    public void Damaged()
+    public IEnumerator Damaged()
     {
         animator.SetTrigger("IsDamaged");
 
@@ -125,6 +117,8 @@ public class PlayerCTRL : PlayerTirggers
         rigidbody.velocity = new Vector2(pushDir[Random.Range(0, pushDir.Length)] * pushSpeed, jumpDir * pushSpeed);
 
         IsDamaged = true;
+        yield return new WaitForSeconds(damagedDelay);
+        IsDamaged = false;
     }
 
     private void SetFriction()
