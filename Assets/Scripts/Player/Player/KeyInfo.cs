@@ -27,6 +27,11 @@ public class KeyInfo
         playerInput.Platformer.Jump.canceled += val => jump = false;
     }
 
+    public void AddMenuKey(GameObject menu)
+    {
+        playerInput.Platformer.Menu.started += val =>  menu.SetActive(!menu.activeSelf);
+    }
+
     public void OnEnabled() => playerInput.Enable();
 
     public void OnDisable() => playerInput.Disable();

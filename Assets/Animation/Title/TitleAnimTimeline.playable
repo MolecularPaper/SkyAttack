@@ -130,7 +130,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 030f85c3f73729f4f976f66ffb23b875, type: 3}
   m_Name: AnimationPlayableAsset
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 7400000, guid: a7e399e66e773f74cbb983cec02c22a1, type: 2}
+  m_Clip: {fileID: 7400000, guid: a0fbf1ea9832fc24cb746b2f624b7675, type: 2}
   m_Position: {x: 0, y: 0, z: 0}
   m_EulerAngles: {x: 0, y: 0, z: 0}
   m_UseTrackMatchFields: 1
@@ -431,7 +431,7 @@ MonoBehaviour:
     m_PreExtrapolationMode: 1
     m_PostExtrapolationTime: 0
     m_PreExtrapolationTime: 0
-    m_DisplayName: Red_Move
+    m_DisplayName: Red_Title_Move
   - m_Version: 1
     m_Start: 115.55
     m_ClipIn: 0

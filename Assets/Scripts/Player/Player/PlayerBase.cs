@@ -22,7 +22,7 @@ public class PlayerBase : DynamicObjectExtension
     [SerializeField] protected AudioClip[] landSound;
     [SerializeField] protected AudioClip[] footStepSound;
 
-    protected KeyInfo key = new KeyInfo();
+    [HideInInspector] public KeyInfo key = new KeyInfo();
 }
 
 public class PlayerExtension : PlayerBase
@@ -169,4 +169,5 @@ public class PlayerTirggers : PlayerExtension
     protected bool IsUp;
     protected bool IsTurn;
     protected bool IsJump;
+    protected bool IsDamaged;
 }
