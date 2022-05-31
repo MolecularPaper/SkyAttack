@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : MonoBehaviour
+public class MoveObject : MoveExtension
 {
     [SerializeField] private Vector3[] moveLocalPoints;
-    [SerializeField] private bool moveOnAwake;
-    [SerializeField] private bool isFlip;
-    [SerializeField] private float moveSpeed;
+
+    [Space(10)]
     [SerializeField] private Color pointColor;
+    [SerializeField] protected bool isFlip;
 
     private SpriteRenderer spriteRenderer;
-
     private Vector3[] movePoints;
-    private bool isMove;
     private int moveIndex;
 
     public Vector3 CurrenPoint
@@ -24,17 +22,11 @@ public class MoveObject : MonoBehaviour
         }
     }
 
-    public bool IsMove
+    public override void Awake()
     {
-        get => isMove;
-        set => isMove = value;
-    }
+        base.Awake();
 
-    public void Awake()
-    {
         spriteRenderer = GetComponent<SpriteRenderer>();
-
-        isMove = moveOnAwake;
         moveIndex = 1;
 
         SetMovePoints();
@@ -106,19 +98,19 @@ public class MoveObject : MonoBehaviour
             moveIndex = 0;
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    public void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
             collision.transform.parent = this.transform;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+    public void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
             collision.transform.parent = null;
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
             collision.transform.parent = null;

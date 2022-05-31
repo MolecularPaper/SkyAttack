@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 8512774429584248341}
   - component: {fileID: 8512774429584248337}
   - component: {fileID: 8512774429584248338}
-  - component: {fileID: 8512774429584248342}
   - component: {fileID: 147409531995552757}
-  m_Layer: 0
-  m_Name: MovingCloud
+  - component: {fileID: 8512774429584248342}
+  m_Layer: 6
+  m_Name: Moving Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8512774429584248343}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -28.5, y: 3.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -135,23 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   extinctionSpeed: 2
---- !u!114 &8512774429584248342
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8512774429584248343}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4960ca7aed19e014290b54651a370a16, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveLocalPoints: []
-  moveOnAwake: 1
-  isFlip: 1
-  moveSpeed: 5
-  pointColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!114 &147409531995552757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,4 +147,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da943087991d4745b249485088030cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  onPlayer: 0
+  playerEnterEvnet:
+    m_PersistentCalls:
+      m_Calls: []
+  playerExitEvnet:
+    m_PersistentCalls:
+      m_Calls: []
+  playerTriggerEnterEvnet:
+    m_PersistentCalls:
+      m_Calls: []
+  playerTriggerExitEvnet:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8512774429584248342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8512774429584248343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4960ca7aed19e014290b54651a370a16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveOnPlayer: 0
+  moveSpeed: 5
+  isMove: 0
+  moveLocalPoints:
+  - {x: -5, y: 0, z: 0}
+  - {x: 0, y: 5, z: 0}
+  - {x: 5, y: 0, z: 0}
+  pointColor: {r: 1, g: 0, b: 0, a: 1}
+  isFlip: 1

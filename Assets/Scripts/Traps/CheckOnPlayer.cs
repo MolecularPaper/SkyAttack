@@ -1,19 +1,51 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Events;
 using UnityEngine;
 
 public class CheckOnPlayer : MonoBehaviour
 {
-    public bool onPlayer = false;
+    [HideInInspector] private bool onPlayer = false;
+    [HideInInspector] public UnityAction valueChangeAction;
 
-    protected virtual void OnCollisionEnter2D(Collision2D collision) => onPlayer = true;
+    [SerializeField] private UnityEvent playerEnterEvnet;
+    [SerializeField] private UnityEvent playerExitEvnet;
+    [SerializeField] private UnityEvent playerTriggerEnterEvnet;
+    [SerializeField] private UnityEvent playerTriggerExitEvnet;
 
-    protected virtual void OnCollisionExit2D(Collision2D collision)
+    public bool OnPlayer
     {
-        onPlayer = false;
+        get => onPlayer;
+        private set
+        {
+            onPlayer = value;
+            
+            if(valueChangeAction != null)
+                valueChangeAction.Invoke();
+        }
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D collision) => onPlayer = true;
+    public virtual void OnCollisionEnter2D(Collision2D collision)
+    {
+        OnPlayer = true;
+        playerEnterEvnet.Invoke();
+    }
 
-    protected virtual void OnTriggerExit2D(Collider2D collision) => onPlayer = false;
+    public virtual void OnCollisionExit2D(Collision2D collision)
+    {
+        OnPlayer = false;
+        playerExitEvnet.Invoke();
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D collision)
+    {
+        OnPlayer = true;
+        playerTriggerEnterEvnet.Invoke();
+    }
+
+    public virtual void OnTriggerExit2D(Collider2D collision)
+    {
+        OnPlayer = false;
+        playerTriggerExitEvnet.Invoke();
+    }
 }

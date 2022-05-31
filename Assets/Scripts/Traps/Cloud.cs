@@ -21,7 +21,7 @@ public class Cloud : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (checkOnPlayer.onPlayer)
+        if (checkOnPlayer.OnPlayer)
         {
             originColor.a = Mathf.MoveTowards(originColor.a, 0, extinctionSpeed * Time.deltaTime);
             spriteRenderer.color = originColor;
