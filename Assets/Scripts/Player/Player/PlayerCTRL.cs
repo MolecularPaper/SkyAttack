@@ -22,7 +22,7 @@ public class PlayerCTRL : PlayerTirggers
     {
         SetFriction();
 
-        if (IsDamaged)
+        if (IsPushed)
             return;
 
         Move();
@@ -108,17 +108,14 @@ public class PlayerCTRL : PlayerTirggers
         }
     }
 
-    public IEnumerator Damaged()
+    public IEnumerator Push(Vector2 pushDir, float pushSpeed)
     {
-        animator.SetTrigger("IsDamaged");
+       animator.SetTrigger("IsPushed");
+        rigidbody.velocity = pushDir * pushSpeed;
 
-        float[] pushDir = new float[]{ -1f, 1f, -0.5f, 0.5f};
-        float jumpDir = Random.Range(0, 1f);
-        rigidbody.velocity = new Vector2(pushDir[Random.Range(0, pushDir.Length)] * pushSpeed, jumpDir * pushSpeed);
-
-        IsDamaged = true;
+        IsPushed = true;
         yield return new WaitForSeconds(damagedDelay);
-        IsDamaged = false;
+        IsPushed = false;
     }
 
     private void SetFriction()

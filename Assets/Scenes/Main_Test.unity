@@ -7878,17 +7878,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2523858947867982125, guid: 7681b7e06ce32b94e9962c1e55881b3c, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     - target: {fileID: 6135590900700288608, guid: 7681b7e06ce32b94e9962c1e55881b3c, type: 3}
       propertyPath: m_Name
       value: Moving Asteroid
-      objectReference: {fileID: 0}
-    - target: {fileID: 6135590900700288608, guid: 7681b7e06ce32b94e9962c1e55881b3c, type: 3}
-      propertyPath: m_Layer
-      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6135590900700288611, guid: 7681b7e06ce32b94e9962c1e55881b3c, type: 3}
       propertyPath: m_RootOrder
