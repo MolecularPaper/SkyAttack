@@ -14,8 +14,7 @@ GameObject:
   - component: {fileID: 7168612999703713879}
   - component: {fileID: 7168612999703713883}
   - component: {fileID: 7168612999703713880}
-  - component: {fileID: 1604560923}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Dark Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -156,18 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da943087991d4745b249485088030cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerEnterEvnet:
-    m_PersistentCalls:
-      m_Calls: []
-  playerExitEvnet:
-    m_PersistentCalls:
-      m_Calls: []
-  playerTriggerEnterEvnet:
-    m_PersistentCalls:
-      m_Calls: []
-  playerTriggerExitEvnet:
-    m_PersistentCalls:
-      m_Calls: []
+  onPlayer: 0
 --- !u!114 &7168612999703713880
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,31 +168,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5d66283006fb2440aa347d8f0407e70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1604560923
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7168612999703713877}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 943f838eb73af2244806b9a75a05e345, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7168612999703713880}
-        m_TargetAssemblyTypeName: PushBack, Assembly-CSharp
-        m_MethodName: Push
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  triggerDelay: 1
+  triggerDelay: 2

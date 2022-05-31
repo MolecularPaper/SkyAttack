@@ -18,7 +18,7 @@ public class PushBack : MonoBehaviour
     {
         if (checkOnPlayer.OnPlayer)
         {
-            playerCTRL.Damaged();
+            StartCoroutine(playerCTRL.Damaged());
         }
     }
 }
