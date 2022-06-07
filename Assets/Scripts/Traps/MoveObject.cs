@@ -27,7 +27,6 @@ public class MoveObject : MoveExtension
         base.Awake();
 
         spriteRenderer = GetComponent<SpriteRenderer>();
-        moveIndex = 1;
 
         SetMovePoints();
     }
@@ -50,8 +49,12 @@ public class MoveObject : MoveExtension
 
     public void Update()
     {
-        if (!isMove)
+        if (!IsMove)
+        {
+            if(moveOnPlayer && !checkOnPlayer.OnPlayer && Vector3.Distance(movePoints[0], transform.position) != 0.0f)
+                MoveOrigin();
             return;
+        }
 
         if (Vector3.Distance(CurrenPoint, transform.position) != 0.0f)
         {
@@ -77,6 +80,11 @@ public class MoveObject : MoveExtension
         transform.position = Vector3.MoveTowards(transform.position, CurrenPoint, Time.deltaTime * moveSpeed);
     }
 
+    private void MoveOrigin()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, movePoints[0], Time.deltaTime * moveSpeed);
+    }
+
     private void Flip()
     {
         if (!isFlip)
@@ -95,7 +103,12 @@ public class MoveObject : MoveExtension
         moveIndex++;
 
         if (moveIndex == movePoints.Length)
+        {
             moveIndex = 0;
+
+            if (moveOnPlayer)
+                IsMove = false;
+        }
     }
 
     public void OnCollisionEnter2D(Collision2D collision)

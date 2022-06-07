@@ -255,7 +255,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 7
-  pushSpeed: 15
   jumpSpeed: 18
   jumpAccel: 2
   maxClimbAngle: 60

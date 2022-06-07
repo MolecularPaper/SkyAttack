@@ -8,6 +8,7 @@ public class MoveCircle : MoveExtension
     [SerializeField] private float radius;
     [SerializeField] private float startAngle;
     [SerializeField] private bool isReverse;
+    [SerializeField] private Color pointColor;
 
     public override void Awake()
     {
@@ -17,6 +18,13 @@ public class MoveCircle : MoveExtension
         transform.rotation = Quaternion.Euler(0, 0, startAngle);
     }
 
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = pointColor;
+
+        Gizmos.DrawSphere(transform.position + new Vector3(0, radius, 0), 0.3f);
+    }
+
     void Update()
     {
         Rotate();
@@ -24,7 +32,7 @@ public class MoveCircle : MoveExtension
 
     private void Rotate()
     {
-        if (!isMove)
+        if (!IsMove)
             return;
 
         Vector3 rotDir = new Vector3(0, 0, isReverse ? -1f : 1f);
