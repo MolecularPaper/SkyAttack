@@ -6,3 +6,7 @@
 *.unity -text merge=unityamlmerge diff
 *.assset -text merge=unityamlmerge diff
 *.prefab -text merge=unityamlmerge diff
+
+*.cs linguist-detectable=true
+*.shader linguist-detectable=false
+*.hlsl linguist-detectable=false
