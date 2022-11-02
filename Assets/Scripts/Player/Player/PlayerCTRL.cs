@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 
 
-public class PlayerCTRL : PlayerTirggers
+public class PlayerCTRL : PlayerExtension
 {
     public override void Awake()
     {
@@ -21,7 +21,8 @@ public class PlayerCTRL : PlayerTirggers
     public virtual void FixedUpdate()
     {
         SetFriction();
-
+         
+        // 만약 플레이어가 밀리고 있는 상태라면, 여기서 리턴하여 조작을 제한함
         if (IsPushed)
             return;
 
@@ -34,6 +35,7 @@ public class PlayerCTRL : PlayerTirggers
 
     public void OnDisable() => key.OnDisable();
 
+    // 플레이어의 이동을 처리함
     private void Move()
     {
         var input = key.Horizontal;
@@ -52,6 +54,7 @@ public class PlayerCTRL : PlayerTirggers
         }
     }
 
+    // 플레이어가 현재 점프 할 수 있는 상태인지 체크함
     private void CheckJump()
     {
         if (rigidbody.velocity.y <= -0.1f || TopCast.collider != null)
@@ -74,6 +77,7 @@ public class PlayerCTRL : PlayerTirggers
         }
     }
 
+    // 플레이어의 점프를 처리함, 가변형 점프방식
     private void Jump()
     {
         if (IsJump && rigidbody.velocity.y <= jumpSpeed)
@@ -88,6 +92,7 @@ public class PlayerCTRL : PlayerTirggers
         IsUp = rigidbody.velocity.y > 0f && !IsGround;
     }
 
+    // 플레이어의 회전을 처리함
     private void Turn()
     {
         float forward = key.Horizontal;
@@ -107,17 +112,22 @@ public class PlayerCTRL : PlayerTirggers
             }
         }
     }
-
+    
+    // 플레이어가 데미지를 받았을경우 pushDir의 방향으로 pushSpeed만큼 밀음.
+    // DamageDelay 동안은 플레이어의 조작이 제한됨
     public IEnumerator Push(Vector2 pushDir, float pushSpeed)
     {
-       animator.SetTrigger("IsPushed");
+        animator.SetTrigger("IsPushed");
         rigidbody.velocity = pushDir * pushSpeed;
 
         IsPushed = true;
         yield return new WaitForSeconds(damagedDelay);
         IsPushed = false;
     }
-
+    
+    //플레이어의 마찰력 계수를 설정해줌.
+    // 플레이어가 움직이지 않거나 움직이지 못하는 경우는 마찰력 계수를 1로,
+    // 플레이어가 움직이고 있다면 마찰력 계수를 0으로 설정해줌.
     private void SetFriction()
     {
         if (CanClimbAngle && !IsMove)
@@ -132,6 +142,7 @@ public class PlayerCTRL : PlayerTirggers
         collider.sharedMaterial.bounciness = 0.0f;
     }
 
+    // 플레이어의 Animator 파라미터값을 업데이트 해줌
     protected virtual void UpdateAnimator()
     {
         animator.SetBool("IsMove", IsMove && !IsWall);
@@ -139,6 +150,7 @@ public class PlayerCTRL : PlayerTirggers
         animator.SetBool("IsAir", !IsGround && rigidbody.velocity.y <= -0.3f);
     }
 
+    // 플레이어의 발소리를 재생해줌. 이동할경우는 Animation에서 Event방식으로 호출됨.
     public void PlaySoundEffect(PlayerSoundEffectType type)
     {
         switch (type)

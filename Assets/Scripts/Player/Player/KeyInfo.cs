@@ -1,14 +1,11 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
-
 public class KeyInfo
 {
-    private Player playerInput = null;
+    private PlayerInput playerInput = null; // 입력 시스템
 
-    private float horizontal;
+    public bool jump; // 플레이어가 점프키를 눌렀는가?
 
-    public bool jump;
-
+    private float horizontal; // 플레이어 이동 방향값
     public float Horizontal
     {
         get
@@ -17,9 +14,10 @@ public class KeyInfo
         }
     }
 
+    // 입력 시스템 초기화 및, 입력 시스템에 입력 이벤트 등록
     public void Awake()
     {
-        playerInput = new Player();
+        playerInput = new PlayerInput();
         playerInput.Platformer.Move.performed += val => horizontal = val.ReadValue<float>();        
         playerInput.Platformer.Move.canceled += val => horizontal = val.ReadValue<float>();
 
@@ -27,12 +25,12 @@ public class KeyInfo
         playerInput.Platformer.Jump.canceled += val => jump = false;
     }
 
-    public void AddMenuKey(GameObject menu)
-    {
-        playerInput.Platformer.Menu.started += val =>  menu.SetActive(!menu.activeSelf);
-    }
+    // 메뉴 키 입력 이벤트 등록
+    public void AddMenuKey(GameObject menu) => playerInput.Platformer.Menu.started += val => menu.SetActive(!menu.activeSelf);
 
+    // 입력 시스템 활성화
     public void OnEnabled() => playerInput.Enable();
 
+    // 입력 시스템 비활성화
     public void OnDisable() => playerInput.Disable();
 }

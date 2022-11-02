@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveObject : MoveExtension
+public class MoveObject : MoveBase
 {
     [SerializeField] private Vector3[] moveLocalPoints;
 

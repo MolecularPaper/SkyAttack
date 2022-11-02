@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveCircle : MoveExtension
+public class MoveCircle : MoveBase
 {
     [SerializeField] private Transform moveObject;
     [SerializeField] private float radius;
@@ -10,11 +10,15 @@ public class MoveCircle : MoveExtension
     [SerializeField] private bool isReverse;
     [SerializeField] private Color pointColor;
 
+    private Quaternion moveObjectOriginRotation;
+
     public override void Awake()
     {
         base.Awake();
 
         moveObject.localPosition = new Vector3(0, radius, 0);
+        moveObjectOriginRotation = moveObject.rotation;
+
         transform.rotation = Quaternion.Euler(0, 0, startAngle);
     }
 
@@ -35,7 +39,8 @@ public class MoveCircle : MoveExtension
         if (!IsMove)
             return;
 
-        Vector3 rotDir = new Vector3(0, 0, isReverse ? -1f : 1f);
-        transform.Rotate(Time.deltaTime * moveSpeed * rotDir);
+        float rotateDir = Time.deltaTime * moveSpeed * (isReverse ? -1f : 1f);
+        moveObject.RotateAround(transform.position, Vector3.forward, rotateDir);
+        moveObject.rotation = moveObjectOriginRotation;
     }
 }

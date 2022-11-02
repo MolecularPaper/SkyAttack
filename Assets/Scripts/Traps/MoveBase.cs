@@ -11,10 +11,7 @@ public class MoveBase : MonoBehaviour
     [HideInInspector] public bool IsMove { get; set; }
 
     protected CheckOnPlayer checkOnPlayer;
-}
 
-public class MoveExtension : MoveBase
-{
     public virtual void Awake()
     {
         checkOnPlayer = GetComponent<CheckOnPlayer>();
